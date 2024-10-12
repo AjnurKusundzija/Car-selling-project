@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head><title>Prodaja košarkaških lopti</title></head>
+<body style="background-color:powderblue;">
+<div style="color:red;">
+
+<h1>Lista kosarkaskih lopti</h1>
+<form method="post" action="projekat.php">
+Odaberi loptu:
+<select name="lopta">
+<option value="lopta1">Spalding</option>
+<option value="lopta2">Adidas</option>
+<option value="lopta3">Nike</option>
+<option value="lopta4">Molten</option>
+<option value="lopta5">Wilson</option>
+<option value="lopta6">Champion</option>
+<option value="lopta7">Jordan</option>
+</select><br>
+<input type="submit" name="submit" value="Potvrdi"/>
+</form>
+<hr>
+
+<h2>Ispis kupovine</h2>
+<?php
+if(isset($_POST["submit"]))
+{
+$lopta = $_POST['lopta'];
+
+  echo "Lopta " .$lopta. "<br>";
+}
+?>
+
+<hr>
+<?php
+$niz=array("Spalding"=>130,"Adidas"=>65,"Nike"=>90,"Molten"=>140,"Wilson"=>75,"Champion"=>40,"Jordan"=>110);
+
+foreach($niz as $lopta=>$cijena)
+{
+  echo"<br>$lopta:$cijena<br>";
+}
+echo "<br>";
+echo"Cijene su isključivo u konvertibilnim markama!";
+?>
+
+<hr>
+
+<img src="spalding.jpg" alt="lopta-spalding">
+<img src="adidas.jpg" alt="lopta-adidas">
+<img src="nike.jpg" alt="lopta-nike">
+<img src="molten.jpg" alt="lopta-molten">
+<img src="wilson.jpg" alt="lopta-wilson">
+<img src="champion.jpg" alt="lopta-champion">
+<img src="jordan.jpg" alt="lopta-jordan">
+
+<?php
+
+<h3>Naš kontakt</h3>
+echo "<br><br>";
+echo "Možete nas kontaktirati putem telefona i e-maila";
+echo "<br>";
+echo "E-mail: faris.numic@gmail.com";
+echo "<br>";
+echo "Broj telefona: 061/072-283";
+echo "<br>";
+?>
+
+</body>
+</html>
